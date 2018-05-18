@@ -1,0 +1,14 @@
+li {
+        margin-bottom: 20px;
+      }
+      li button {
+        font-size: 10px;
+        margin-left: 20px;
+        color: #666;
+      }
+#comment {
+    margin-left: 50px;
+}
+#form1{
+    margin-top: 20px;
+}
