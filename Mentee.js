@@ -9,6 +9,8 @@
         var listBtn = document.createElement('button');
         var comment = document.createElement('input');
         var commentBtn = document.createElement('button');
+        var edit = document.createElement('input');
+        var editBtn = document.createElement('button');
         var rating = document.createElement('form');
         var select = document.createElement('select');
         var rating1 = document.createElement('option');
@@ -34,22 +36,33 @@
         select.appendChild(rating4);
         select.appendChild(rating5);  
         comment.setAttribute('id','comment')
+        listItem.appendChild(rating);
         listItem.appendChild(listText);
         listText.textContent = Name;
         listItem.appendChild(listBtn);
         listBtn.textContent = 'Delete';
         listItem.appendChild(comment);
         listItem.appendChild(commentBtn);
+        editBtn.textContent = 'Edit';
         commentBtn.textContent = 'Add Comment';
         list.appendChild(listItem);
-        listItem.appendChild(rating);
-        commentBtn.onclick = function(p) {
+                commentBtn.onclick = function(p) {
             var Comment = comment.value;
             comment.value = '';
             var para = document.createElement('p');
             listItem.appendChild(para);
             para.textContent = Comment;
+            listItem.appendChild(edit);
+            listItem.appendChild(editBtn);
+            editBtn.onclick = function(q) {
+               var Edit = edit.value;
+                edit.value='';
+                para.textContent=Edit;
+                
+                
+            }
         }
+        
         listBtn.onclick = function(e) {
           list.removeChild(listItem);
         }
